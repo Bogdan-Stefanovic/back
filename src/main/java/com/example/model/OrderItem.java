@@ -33,8 +33,6 @@ public class OrderItem {
 
 
     private int quantity;
-
-    // Getters and Setters
 }
 
 

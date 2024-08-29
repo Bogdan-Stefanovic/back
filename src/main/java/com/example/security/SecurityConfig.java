@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
                         .requestMatchers("/api/orders/checkout").hasRole("USER")
+                        .requestMatchers("/api/restaurants/**").permitAll()
                         .requestMatchers("/api/orders/**").hasRole("USER") // Make sure the role matches what is assigned to users in your system
                         .requestMatchers("/api/auth/**").hasAnyRole("USER", "CUSTOMER", "RESTAURANT_OWNER", "DELIVERY_PERSON")
                         .anyRequest().authenticated()
